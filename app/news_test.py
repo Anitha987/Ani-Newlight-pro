@@ -8,10 +8,10 @@ class NewsTest(unittest.TestCase):
     '''
 
     def setUp(self):
-        '''
-        Set up method that will run before every Test
-        '''
-        # self.new_news = News()
+    '''
+    Set up method that will run before every Test
+    '''
+    # self.new_news = News()
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_news,News))
