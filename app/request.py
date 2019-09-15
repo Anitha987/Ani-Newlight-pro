@@ -1,4 +1,4 @@
-from app import app    
+from app import app
 import urllib.request,json
 from .models import source
 
@@ -49,38 +49,23 @@ def process_results(source_list):
         source_object=Source(id,name,description,url,category,language,country)
         source_results.append(source_object)
     return source_results  
-  def get_article(id):
-    get_article_details_url = base_url.format(id,api_key)
+  def get_source(id):
+    get_source_details_url = base_url.format(id,api_key)
 
-    with urllib.request.urlopen(get_article_details_url) as url:
-        article_details_data = url.read()
-        article_details_response = json.loads(_details_data)
+    with urllib.request.urlopen(get_source_details_url) as url:
+        source_details_data = url.read()
+        source_details_response = json.loads(_details_data)
 
-        article_object = None
-        if article_details_response:
-            id = article_details_response.get('id')
-            title = article_details_response.get('original_title')
-            overview = article_details_response.get('overview')
-            poster = article_details_response.get('poster_path')
-            vote_average = article_details_response.get('vote_average')
-            vote_count = article_details_response.get('vote_count')
-            article_object = Article(id,title,overview,poster,vote_average,vote_count)
+        source_object = None
+        if source_details_response:
+            id = source_details_response.get('id')
+            title = source_details_response.get('original_title')
+            overview = source_details_response.get('overview')
+            poster = source_details_response.get('poster_path')
+            vote_average = source_details_response.get('vote_average')
+            vote_count = source_details_response.get('vote_count')
+            source_object = Source(id,title,overview,poster,vote_average,vote_count)
 
-    return article_object 
-def search_article(article_name):
-    # search_article_url = 'https://api.themoviedb.org/3/search/movie?api_key={}&query={}'.format(api_key,article_name)
-    with urllib.request.urlopen(search_article_url) as url:
-        search_article_data = url.read()
-        search_article_response = json.loads(search_article_data)
-
-        search_article_results = None
-
-        if search_article_response['results']:
-            search_article_list = search_article_response['results']
-            search_article_results = process_results(search_article_list)
-
-
-    return search_article_results    
-
+    return source_object  
 
 

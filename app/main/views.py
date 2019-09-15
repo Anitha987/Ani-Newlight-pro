@@ -1,18 +1,24 @@
-from flask import render_template    
+from flask import render_template,request,redirect,url_for      
 from app import app
 from .request import get_source,get_article,search_article
 from app import views
 from app import error
 # Views
 @app.route('/')
-def index():
+def index():  
 
     '''
     View root page function that returns the index page and its data
     '''
     anitha_source=get_source()
     title = 'You are most  welcome to the best News Highlight'
-    return render_template('index.html',title=title,sources=anitha_source)
+    
+    search_article = request.args.get('article_query')
+
+    if search_article:
+        return redirect(url_for('search',article_name=search_article))
+    else:
+        return render_template('index.html',title=title,sources=anitha_source)
 @app.route('/source/<int:source_id>')
 def source(source_id):
 
