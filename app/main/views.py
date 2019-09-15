@@ -1,6 +1,8 @@
 from flask import render_template    
 from app import app
-from .request import get_source,get_article
+from .request import get_source,get_article,search_article
+from app import views
+from app import error
 # Views
 @app.route('/')
 def index():

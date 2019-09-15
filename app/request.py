@@ -67,6 +67,20 @@ def process_results(source_list):
             article_object = Article(id,title,overview,poster,vote_average,vote_count)
 
     return article_object 
+def search_article(article_name):
+    # search_article_url = 'https://api.themoviedb.org/3/search/movie?api_key={}&query={}'.format(api_key,article_name)
+    with urllib.request.urlopen(search_article_url) as url:
+        search_article_data = url.read()
+        search_article_response = json.loads(search_article_data)
+
+        search_article_results = None
+
+        if search_article_response['results']:
+            search_article_list = search_article_response['results']
+            search_article_results = process_results(search_article_list)
+
+
+    return search_article_results    
 
 
 
