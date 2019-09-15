@@ -7,12 +7,12 @@
         {% if title %}
         <title> {{ title }}</title>
         {% else %}
-        <title> you are most welcome to the best News Website Online </title>
+        <title> you are most welcome to the best News Highlight</title>
         {% endif %}
     </head>
     <body>
-        {% for anitha_news in news %}
-            <li>{{ anitha_news.title}}</li>
+        {% for anitha_source in source %}
+            <li>{{ anitha_source.title}}</li>
         {% endfor %}
 
     </body>

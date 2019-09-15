@@ -1,20 +1,20 @@
 import unittest
-from models import news
-NEWS = news.News
+from models import source
+SOURCE = source.Source
 
-class NewsTest(unittest.TestCase):
+class SourceTest(unittest.TestCase):
     '''
-    Test Class to test the behaviour of the News class
+    Test Class to test the behaviour of the Source class
     '''
 
     def setUp(self):
     '''
     Set up method that will run before every Test
     '''
-    # self.new_news = News()
+    # self.source_sources = Source()
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.new_news,News))
+        self.assertTrue(isinstance(self.source_sources,Source))
 
 
 if __name__ == '__main__':

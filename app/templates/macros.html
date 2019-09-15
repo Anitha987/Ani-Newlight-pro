@@ -1,7 +1,7 @@
-{% macro displayNewsList(News_list) %}
+{% macro displaySourceList(Source_list) %}
 
-    {% for news in news_list %}
-        <li>{{ news.title}}</li>
+    {% for source in source_list %}
+        <li>{{ source.title}}</li>
     {% endfor %}
 
 {% endmacro %}
