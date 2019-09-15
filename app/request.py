@@ -49,5 +49,24 @@ def process_results(news_list):
         news_object=News(id,name,description,url,category,language,country)
         news_results.append(news_object)
     return news_results  
+  def get_news(id):
+    get_news_details_url = base_url.format(id,api_key)
+
+    with urllib.request.urlopen(get_news_details_url) as url:
+        news_details_data = url.read()
+        news_details_response = json.loads(_details_data)
+
+        news_object = None
+        if news_details_response:
+            id = news_details_response.get('id')
+            title = news_details_response.get('original_title')
+            overview = movie_details_response.get('overview')
+            poster = movie_details_response.get('poster_path')
+            vote_average = movie_details_response.get('vote_average')
+            vote_count = movie_details_response.get('vote_count')
+
+            movie_object = Movie(id,title,overview,poster,vote_average,vote_count)
+
+    return movie_object  
 
 
