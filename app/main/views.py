@@ -29,4 +29,14 @@ def article(id):
     article = get_article(id)
     title = f'{article.title}'
 
-    return render_template('article.html',title = title,article = article)    
+    return render_template('article.html',title = title,article = article) 
+@app.route('/search/<article_name>')
+def search(article_name):
+    '''
+    View function to display the search results
+    '''
+    article_name_list = article_name.split(" ")
+    article_name_format = "+".join(article_name_list)
+    searched_article = search_article(article_name_format)
+    title = f'search results for {article_name}'
+    return render_template('search.html',articles = searched_articles)       
