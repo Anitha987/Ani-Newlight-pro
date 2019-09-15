@@ -1,4 +1,4 @@
-from app import app    
+from app import app
 import urllib.request,json
 from .models import source
 
@@ -49,24 +49,23 @@ def process_results(source_list):
         source_object=Source(id,name,description,url,category,language,country)
         source_results.append(source_object)
     return source_results  
-  def get_article(id):
-    get_article_details_url = base_url.format(id,api_key)
+  def get_source(id):
+    get_source_details_url = base_url.format(id,api_key)
 
-    with urllib.request.urlopen(get_article_details_url) as url:
-        article_details_data = url.read()
-        article_details_response = json.loads(_details_data)
+    with urllib.request.urlopen(get_source_details_url) as url:
+        source_details_data = url.read()
+        source_details_response = json.loads(_details_data)
 
-        article_object = None
-        if article_details_response:
-            id = article_details_response.get('id')
-            title = article_details_response.get('original_title')
-            overview = article_details_response.get('overview')
-            poster = article_details_response.get('poster_path')
-            vote_average = article_details_response.get('vote_average')
-            vote_count = article_details_response.get('vote_count')
-            article_object = Article(id,title,overview,poster,vote_average,vote_count)
+        source_object = None
+        if source_details_response:
+            id = source_details_response.get('id')
+            title = source_details_response.get('original_title')
+            overview = source_details_response.get('overview')
+            poster = source_details_response.get('poster_path')
+            vote_average = source_details_response.get('vote_average')
+            vote_count = source_details_response.get('vote_count')
+            source_object = Source(id,title,overview,poster,vote_average,vote_count)
 
-    return article_object 
-
+    return source_object  
 
 

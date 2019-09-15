@@ -1,6 +1,6 @@
-from flask import render_template    
+from flask import render_template
 from app import app
-from .request import get_source,get_article
+from .request import get_source
 # Views
 @app.route('/')
 def index():
@@ -18,13 +18,3 @@ def source(source_id):
     View source page function that returns the source details page and its data
     '''
     return render_template('source.html',id = source_id)    
-@app.route('/article/<int:id>')
-def article(id):
-
-    '''
-    View article page function that returns the article details page and its data
-    '''
-    article = get_article(id)
-    title = f'{article.title}'
-
-    return render_template('article.html',title = title,article = article)    
