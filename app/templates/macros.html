@@ -5,3 +5,10 @@
     {% endfor %}
 
 {% endmacro %}
+{% macro displayArticleList(article_list) %}
+
+    {% for article in article_list %}
+        <li style="list-style-type:none"> {{ article.title }} </li>
+    {% endfor %}
+
+{% endmacro %}

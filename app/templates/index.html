@@ -10,26 +10,22 @@
 {% block content %}
 
 <div class="container">
-    <form>
-        <input type="text" name="movie_query" placeholder="Search for a Movie" class="form-control">
+    <!-- <form>
+        <input type="text" name="movie_query" placeholder="Search f" class="form-control">
         <input type="submit"  value="Submit" class="btn btn-default">
-    </form>
-
-</div>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> you are most welcome to the best News Highlight</title>
-        {% endif %}
-    </head>
-    <body>
-        {% for anitha_source in source %}
-            <li>{{ anitha_source.title}}</li>
-        {% endfor %}
-
-    </body>
-</html>
+    </form> -->
+    <!-- {% for anitha_source in sources %}
+            <li>{{ anitha_source.name}}</li>
+        {% endfor %} -->
+        <h1 style="text-align:center"> NEWS SOURCES </h1>
+        <ul>
+            {% for news_source in sources %}
+                <li style="list-style-type:none; font: size 24px;"><h3> <a href="{{ news_source.url}}">{{ news_source.name}}</a> </h3></li>
+                <li style="list-style-type:none"><p> {{ news_source.description }} </p></li>
+                <a href="/article/{{ news_source.id }}" class="btn btn-primary">Click Here To Read Articles</a>
+                
+                <hr> 
+            {% endfor %}
+        </ul>
+    </div>
+{%endblock%}
