@@ -1,15 +1,18 @@
 Ani-NewLight
 ###{Ani-NewLight project}
 
-##Description This project is all about the password locker where one is able to create an account using username email and password. ##Development server Run ng serve for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files. ###Setup/Installation Requirements my end user must have chrome must have visual code studio bootstrap ubuntu setup. ##Technologies Used My project used python.
+##Description
+News Highlight is a web application that displays a list of news sources from around the world. A user is able to go the source page to view the news sources and onwards views articles of that news source. The application makes use of the the news api, a free api that allows one to fetch api data.
 
-##Code scaffolding Run ng generate component component-name to generate a new component. You can also use ng generate directive|pipe|service|class|guard|interface|enum|module. ##Support and contact details If you encount any problem please let me know.below is my email ##E-mail:anithaumuhire@gmail.com ##https://github.com/Anitha987/AnQuote-app.git
+##Behaviour of the application
+The user visits the app url in any browser and interacts with the application
+The user can view the news sources and click on the news sources to view the news articles
 
-Build Run ng build to build the project. The build artifacts will be stored in the dist/ directory. Use the --prod flag for a production build.
+##Technology Used
+Python3.6
 
-Running unit tests Run ng test to execute the unit tests via Karma.
-
-Running end-to-end tests Run ng e2e to execute the end-to-end test via Protractor.
+##Test Driven Development
+Testing was done using python inbuild test tool called unittest
 
 Copyright (c) [2019] [umuhire anitha]
 
